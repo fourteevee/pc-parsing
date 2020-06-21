@@ -1,0 +1,90 @@
+{
+    "appName": "REPLACE ME",
+    "key": "REPLACE ME",
+    "prefix": ".",
+    "staffRegex": "^[!#*\\\"$\\;\\'()]+",
+    "realmeyeUserAgent": "Mozilla/5.0 (Windows NT 6.2; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0",
+    "apiWaitTime": 1000,
+    "classStats" : {
+        "768": {
+            "name": "Rogue",
+            "att": 50,
+            "dex": 75
+        },
+        "775": {
+            "name": "Archer",
+            "att": 75,
+            "dex": 50
+        },
+        "782": {
+            "name": "Wizard",
+            "att": 75,
+            "dex": 75
+        },
+        "784": {
+            "name": "Priest",
+            "att": 50,
+            "dex": 55
+        },
+        "797": {
+            "name": "Warrior",
+            "att": 75,
+            "dex": 50
+        },
+        "798": {
+            "name": "Knight",
+            "att": 50,
+            "dex": 50
+        },
+        "799": {
+            "name": "Paladin",
+            "att": 50,
+            "dex": 45
+        },
+        "800": {
+            "name": "Assassin",
+            "att": 60,
+            "dex": 75
+        },
+        "801": {
+            "name": "Necromancer",
+            "att": 75,
+            "dex": 60
+        }, 
+        "802": {
+            "name": "Huntress",
+            "att": 75,
+            "dex": "50"
+        },
+        "803": {
+            "name": "Mystic",
+            "att": 60,
+            "dex": 55
+        },
+        "804": {
+            "name": "Trickster",
+            "att": 65,
+            "dex": 75
+        },
+        "805": {
+            "name": "Sorcerer",
+            "att": 70,
+            "dex": 60
+        },
+        "806": {
+            "name": "Ninja",
+            "att": 70,
+            "dex": 70
+        },
+        "785": {
+            "name": "Samurai",
+            "att": 75,
+            "dex": 50
+        },
+        "796": {
+            "name": "Bard",
+            "att": 55,
+            "dex": 70
+        }
+    }
+}
