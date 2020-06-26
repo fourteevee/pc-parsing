@@ -230,6 +230,9 @@ namespace Amelia_Bot
              "Parses an image to verify player stats, see who is in the server but not in voice chat, and who is not in the server.")]
         public async Task Parse(CommandContext ctx)
         {
+            if (ctx.Channel.Name != "parsing")
+                return;
+
             if (ctx.Message.Attachments.Count != 1)
             {
                 FailParse(ctx, ctx.Message.Attachments.Count == 0 ? "No image attached." : "Too many images attached.");
@@ -532,16 +535,19 @@ namespace Amelia_Bot
                     //Get the information about this class
                     ClassInfo info = Bot.Config.Classes[stats.Attributes["data-class"].Value];
                     var rawStats = parseStats.Match(stats.Attributes["data-stats"].Value);
+                    var bonuses = parseStats.Match(stats.Attributes["data-bonuses"].Value);
 
                     //Get the player character's stats
                     if (!int.TryParse(rawStats.Groups[2].Value, out var dex) ||
-                        !int.TryParse(rawStats.Groups[1].Value, out var att))
+                        !int.TryParse(rawStats.Groups[1].Value, out var att) ||
+                        !int.TryParse(bonuses.Groups[2].Value, out var bDex) ||
+                        !int.TryParse(bonuses.Groups[1].Value, out var bAtt))
                     {
                         output.Add(new FailReqData(name, "Failed to parse data.", null));
                         continue;
                     }
 
-                    if (att < info.MaxAttack || dex < info.MaxDexterity)
+                    if (att - bAtt < info.MaxAttack || dex - bDex < info.MaxDexterity)
                     {
                         failReason += $"**ATT: {att}/{info.MaxAttack}\nDEX: {dex}/{info.MaxDexterity}**";
                     }
