@@ -2,7 +2,7 @@
 using System.IO;
 using Newtonsoft.Json;
 
-namespace Amelia_Bot
+namespace pc_parsing
 {
     class Program
     {

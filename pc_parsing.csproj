@@ -1,0 +1,34 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <RootNamespace>pc_parsing</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="dsharpplus" Version="3.2.3" />
+    <PackageReference Include="DSharpPlus.CommandsNext" Version="3.2.3" />
+    <PackageReference Include="Fizzler.Systems.HtmlAgilityPack" Version="1.2.1" />
+    <PackageReference Include="tesseract" Version="3.3.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ContentWithTargetPath 
+       Include="lib\eng.traineddata"
+       CopyToOutputDirectory="PreserveNewest"
+       TargetPath="tessdata\eng.traineddata" />
+    <None Update="config.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <ContentWithTargetPath 
+        Include="lib\liblept1753.so"
+        CopyToOutputDirectory="PreserveNewest"
+        TargetPath="x64\liblept1753.so" />
+    <ContentWithTargetPath 
+        Include="lib\libtesseract3052.so"
+        CopyToOutputDirectory="PreserveNewest"
+        TargetPath="x64\libtesseract3052.so" />
+  </ItemGroup>
+
+</Project>

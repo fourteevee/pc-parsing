@@ -7,7 +7,7 @@ using DSharpPlus.CommandsNext;
 using DSharpPlus.Entities;
 using Tesseract;
 
-namespace Amelia_Bot
+namespace pc_parsing
 {
     public class Bot
     {

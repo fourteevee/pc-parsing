@@ -14,7 +14,7 @@ using DSharpPlus.Entities;
 using HtmlAgilityPack;
 using Tesseract;
 
-namespace Amelia_Bot
+namespace pc_parsing
 {
     /// <summary>
     /// Basic commands that don't have to do with parsing. Rules, ping, etc.
