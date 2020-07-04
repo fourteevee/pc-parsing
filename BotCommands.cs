@@ -27,10 +27,10 @@ namespace pc_parsing
         {
             DiscordEmbedBuilder builder = new DiscordEmbedBuilder();
 
-            DiscordMember amelia = await ctx.Guild.GetMemberAsync(182991062011346945);
+            DiscordMember bot = await ctx.Guild.GetMemberAsync(Bot.Config.BotId);
             string now = DateTime.Now.ToString("MM/dd/yyyy HH:mm:ss");
 
-            builder.WithFooter($"© AmeliaX {now}", amelia.AvatarUrl);
+            builder.WithFooter($"{Bot.Config.BotName} {now}", bot.AvatarUrl);
             builder.WithAuthor("Pong!", null, ctx.Member.AvatarUrl);
             builder.WithColor(new DiscordColor(70, 19, 188));
 
@@ -370,9 +370,9 @@ namespace pc_parsing
             builder.AddField("Parse status:", "Succeeded");
             builder.AddField("Confidence", confidence.ToString(CultureInfo.InvariantCulture), false);
             builder.AddField("Players in the run:", players, false);
-            DiscordMember amelia = ctx.Guild.GetMemberAsync(182991062011346945).Result;
-            builder.WithFooter($"© AmeliaX {DateTime.Now.ToString(CultureInfo.InvariantCulture)}",
-                amelia.AvatarUrl);
+            DiscordMember bot = ctx.Guild.GetMemberAsync(Bot.Config.BotId).Result;
+            builder.WithFooter($"{Bot.Config.BotName} {DateTime.Now.ToString(CultureInfo.InvariantCulture)}",
+                bot.AvatarUrl);
             return builder;
         }
 
@@ -431,9 +431,9 @@ namespace pc_parsing
             failBuilder.WithAuthor($"{ctx.Message.Author.Username}'s parse", null, ctx.Message.Author.AvatarUrl);
             failBuilder.AddField("Parse status:", "Failed");
             failBuilder.AddField("Fail reason:", reason);
-            DiscordMember amelia = await ctx.Guild.GetMemberAsync(182991062011346945);
-            failBuilder.WithFooter("© AmeliaX " + DateTime.Now.ToString(CultureInfo.InvariantCulture),
-                amelia.AvatarUrl);
+            DiscordMember bot = ctx.Guild.GetMemberAsync(182991062011346945).Result;
+            failBuilder.WithFooter($"{Bot.Config.BotName} " + DateTime.Now.ToString(CultureInfo.InvariantCulture),
+                bot.AvatarUrl);
             await ctx.Message.RespondAsync(null, false, failBuilder.Build());
         }
 

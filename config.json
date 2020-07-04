@@ -1,6 +1,8 @@
 {
-    "appName": "REPLACE ME",
-    "key": "REPLACE ME",
+    "discordAppName": "REPLACE ME",
+    "discordKey": "REPLACE ME",
+    "botName": "AmeliaX",
+    "botUserID": 182991062011346945,
     "prefix": ".",
     "staffRegex": "^[!#*\\\"$\\;\\'()]+",
     "realmeyeUserAgent": "Mozilla/5.0 (Windows NT 6.2; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0",

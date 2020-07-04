@@ -82,9 +82,9 @@ namespace pc_parsing
             failBuilder.WithAuthor($"{e.Context.Message.Author.Username}'s parse", null, e.Context.Message.Author.AvatarUrl);
             failBuilder.AddField("Parse status:", "Failed");
             failBuilder.AddField("Fail reason:", $"{e.Exception.GetType()}: {e.Exception.Message ?? "<no message>"}");
-            DiscordMember amelia = await e.Context.Guild.GetMemberAsync(182991062011346945);
-            failBuilder.WithFooter("© AmeliaX " + DateTime.Now.ToString(CultureInfo.InvariantCulture),
-                amelia.AvatarUrl);
+            DiscordMember bot = e.Context.Guild.GetMemberAsync(Config.BotId).Result;
+            failBuilder.WithFooter($"{Config.BotName} " + DateTime.Now.ToString(CultureInfo.InvariantCulture),
+                bot.AvatarUrl);
             await e.Context.Message.RespondAsync(null, false, failBuilder.Build());
         }
     }

@@ -5,8 +5,10 @@ namespace pc_parsing
 {
     public struct BotConfig
     {
-        [JsonProperty("appName")] public string Application;
-        [JsonProperty("key")] public string ApiKey;
+        [JsonProperty("discordAppName")] public string Application;
+        [JsonProperty("discordKey")] public string ApiKey;
+        [JsonProperty("botName")] public string BotName;
+        [JsonProperty("botUserID")] public ulong BotId;
         [JsonProperty("prefix")] public string CommandPrefix;
         [JsonProperty("staffRegex")] public string StaffRegex;
         [JsonProperty("realmeyeUserAgent")] public string UserAgent;
