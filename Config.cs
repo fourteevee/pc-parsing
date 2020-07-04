@@ -14,6 +14,7 @@ namespace pc_parsing
         [JsonProperty("realmeyeUserAgent")] public string UserAgent;
         [JsonProperty("classStats")] public Dictionary<string, ClassInfo> Classes;
         [JsonProperty("apiWaitTime")] public int SleepTimer;
+        [JsonProperty("channelWhitelist")] public string[] Whitelist;
     }
 
     public struct ClassInfo

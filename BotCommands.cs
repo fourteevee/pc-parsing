@@ -171,6 +171,9 @@ namespace pc_parsing
          Description("Parse an image to see who is in the server but not in voice chat, and who is not in the server.")]
         public async Task Channels(CommandContext ctx)
         {
+            if (!Bot.Config.Whitelist.Contains(ctx.Channel.Name))
+                return;
+            
             if (ctx.Message.Attachments.Count != 1)
             {
                 FailParse(ctx, ctx.Message.Attachments.Count == 0 ? "No image attached." : "Too many images attached.");
@@ -230,7 +233,7 @@ namespace pc_parsing
              "Parses an image to verify player stats, see who is in the server but not in voice chat, and who is not in the server.")]
         public async Task Parse(CommandContext ctx)
         {
-            if (ctx.Channel.Name != "parsing")
+            if (!Bot.Config.Whitelist.Contains(ctx.Channel.Name))
                 return;
 
             if (ctx.Message.Attachments.Count != 1)
