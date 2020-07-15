@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Globalization;
+using System.Linq;
 using System.Threading.Tasks;
 using DSharpPlus;
 using DSharpPlus.EventArgs;
@@ -68,6 +69,9 @@ namespace pc_parsing
 
         private Task CommandError(CommandErrorEventArgs e)
         {
+            if (!Config.Whitelist.Contains(e.Context.Message.Channel.Name))
+                return Task.CompletedTask;
+            
             e.Context.Client.DebugLogger.LogMessage(LogLevel.Error, Config.Application, 
                 $"{e.Context.User.Username} tried executing '{e.Command?.QualifiedName ?? "<unknown command>"}' but it errored: {e.Exception.GetType()}: {e.Exception.Message ?? "<no message>"}", DateTime.Now);
             Console.WriteLine(
