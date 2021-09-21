@@ -1,8 +1,8 @@
 {
     "discordAppName": "REPLACE ME",
     "discordKey": "REPLACE ME",
-    "botName": "AmeliaX",
-    "botUserID": 182991062011346945,
+    "botName": "REPLACE ME",
+    "botUserID": REPLACEME,
     "prefix": ".",
     "staffRegex": "^[!#*\\\"$\\;\\'()]+",
     "realmeyeUserAgent": "Mozilla/5.0 (Windows NT 6.2; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0",
@@ -88,6 +88,11 @@
             "name": "Bard",
             "att": 55,
             "dex": 70
+        },
+        "817": {
+            "name": "Summoner",
+            "att": 50,
+            "dex": 75
         }
     }
 }
